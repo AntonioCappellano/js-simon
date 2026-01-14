@@ -1,4 +1,5 @@
 const randomNumber = document.getElementById("numbers-list");
+const countdownTimer = document.getElementById("countdown");
 
 let allNumbers = "";
 for (let i = 0; i < 5; i++) {
@@ -9,8 +10,13 @@ for (let i = 0; i < 5; i++) {
 
 randomNumber.innerHTML = allNumbers;
 
-let countdownSeconds = 5;
+let countDownSeconds = 5;
 
-setInterval(function () {
+const setCountDown = setInterval(function () {
   randomNumber.innerHTML = "";
+  countDownSeconds--;
+  countdownTimer.innerHTML = countDownSeconds;
+  if (countDownSeconds <= 0) {
+    clearInterval(setCountDown);
+  }
 }, 5000);
