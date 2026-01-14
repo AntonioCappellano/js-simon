@@ -8,3 +8,9 @@ for (let i = 0; i < 5; i++) {
 }
 
 randomNumber.innerHTML = allNumbers;
+
+let countdownSeconds = 5;
+
+setInterval(function () {
+  randomNumber.innerHTML = "";
+}, 5000);
