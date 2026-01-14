@@ -1,5 +1,6 @@
 const randomNumber = document.getElementById("numbers-list");
 const countdownTimer = document.getElementById("countdown");
+const answersInputForm = document.getElementById("answers-form");
 
 let allNumbers = "";
 for (let i = 0; i < 5; i++) {
@@ -11,12 +12,14 @@ for (let i = 0; i < 5; i++) {
 randomNumber.innerHTML = allNumbers;
 
 let countDownSeconds = 5;
+countdownTimer.innerHTML = countDownSeconds;
 
 const setCountDown = setInterval(function () {
-  randomNumber.innerHTML = "";
   countDownSeconds--;
   countdownTimer.innerHTML = countDownSeconds;
   if (countDownSeconds <= 0) {
     clearInterval(setCountDown);
+    randomNumber.innerHTML = "";
+    answersInputForm.classList = "inline";
   }
-}, 5000);
+}, 1000);
